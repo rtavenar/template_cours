@@ -28,6 +28,7 @@ jobs:
     # Build the html, pdf and epub versions
     - name: Build the html, pdf and epub
       run: |
+        mkdir -p _build/html _build/pdf _build/epub
         make all
 
     - name: GitHub Pages action
