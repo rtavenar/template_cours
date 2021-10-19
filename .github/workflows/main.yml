@@ -18,12 +18,9 @@ jobs:
     - uses: r-lib/actions/setup-pandoc@v1
       with:
         pandoc-version: '2.13' # The pandoc version to download (if necessary) and use.
-    - uses: r-lib/actions/setup-tinytex@v1  # A lightweight LaTeX
-
-    # # If a more consistent LaTeX install is needed, the following should do it
-    # - name: install latex dependencies
-    #   run: |
-    #     sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-xetex latexmk
+    - name: install latex dependencies
+      run: |
+        sudo apt-get install texlive-latex-recommended texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra texlive-xetex latexmk
 
     # Build the html, pdf and epub versions
     - name: Build the html, pdf and epub
