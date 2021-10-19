@@ -7,13 +7,13 @@ TARGETS      := $(TARGETS_HTML) $(TARGETS_EPUB) $(TARGETS_PDF)
 all: $(TARGETS)
 
 html/%.html: src/%.md
-	pandoc --self-contained -s -o $@ --highlight-style pygments --columns 1000 --css assets/td.css --ascii --number-sections --mathml $^
+	pandoc --self-contained -s -o $@ --resource-path src/ --highlight-style pygments --columns 1000 --css assets/td.css --ascii --number-sections --mathml $^
 
 epub/%.epub: src/%.md
-	pandoc -o $@ --columns 1000 --number-sections --css assets/td_epub.css --mathml $^
+	pandoc -o $@ --resource-path src/ --columns 1000 --number-sections --css assets/td_epub.css --mathml $^
 
 pdf/%.pdf: src/%.md
-	pandoc -V lang=fr -o $@ --columns 1000 --variable urlcolor=cyan --number-sections $^
+	pandoc -V lang=fr -o $@ --resource-path src/ --columns 1000 --variable urlcolor=cyan --number-sections $^
 
 clean:
 	rm -f $(TARGETS)
