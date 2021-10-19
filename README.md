@@ -3,7 +3,7 @@
 Ce dépôt est un _template_ de dépôt permettant :
 * d'écrire des fiches de TD en Markdown
 * de les compiler avec `pandoc` vers HTML et PDF (via une GitHub Action)
-* de les publier via la branche `gh-pages` (**TODO: documenter la manip à faire**)
+* de les publier via la branche `gh-pages` (voir l'[aide de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) sur ce point)
 
 ## Fonctionnement
 
