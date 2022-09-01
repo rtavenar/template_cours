@@ -13,7 +13,7 @@ _build/epub/%.epub: src/%.md
 	pandoc -o $@ --resource-path src/ --columns 1000 --number-sections --css assets/td_epub.css --mathml $^
 
 _build/pdf/%.pdf: src/%.md
-	pandoc -V lang=fr -o $@ --resource-path src/ --columns 1000 --variable urlcolor=cyan --number-sections $^
+	pandoc -V lang=fr -o $@ --resource-path src/ --template assets/custom-eisvogel.tex --listings --columns 1000 --variable urlcolor=cyan --number-sections $^
 
 clean:
 	rm -f $(TARGETS)
